@@ -5,7 +5,7 @@ function App() {
   const [randomNum, setRandomNum] = useState("");
 
   const handleClick = async () => {
-    const response = await fetch("http://localhost:8000/randomNum");
+    const response = await fetch(`http://${import.meta.env.VITE_WEB_URL}/randomNum`);
     const data = await response.json();
     console.log(data);
     setRandomNum(data);
